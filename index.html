@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main>
+        <h1>Tic Tac Toe</h1>
+        <div class="flex-container">
+            <div id="player1" class="player1">
+                <h2>Player <span>1</span></h2>
+                <p id="pointsP1">0</p>
+                <div class="cor"><img class="img-cor" src="media/corona.png" alt=""></div>
+            </div>
+            <div class="grid-game">
+                <div id="1"></div>
+                <div id="2"></div>
+                <div id="3"></div>
+                <div id="4"></div>
+                <div id="5"></div>
+                <div id="6"></div>
+                <div id="7"></div>
+                <div id="8"></div>
+                <div id="9"></div>
+            </div>
+            <div id="player2" class="player2">
+                <h2>Player <span>2</span></h2>
+                <p id="pointsP2">0</p>
+                <div class="cor"><img class="img-cor" src="media/corona.png" alt=""></div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <div id="victory" class="victory"></div>
+
+    <div id="display-newgame" class="newgame-container">
+        <button id="newgame" class="newgame">New game</button>
+    </div>
+
+    <div class="restart-container">
+        <button id="restart" class="restart">RESTART ALL</button>
+    </div>
+
+    <script src="./game.js"></script>
+
+</body>
+</html>

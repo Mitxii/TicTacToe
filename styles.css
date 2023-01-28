@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+main {
+    width: 100%;
+    text-align: center;
+    margin-top: 10vh;
+}
+
+main h1 {
+    margin-bottom: 5vh;
+}
+
+main h2 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.501);
+}
+
+span {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.flex-container {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+.player1,
+.player2 {
+    height: fit-content;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    color: white;
+    z-index: 5;
+}
+
+.player1 p,
+.player2 p {
+    background-color: rgba(0, 0, 0, 0.501);
+    border-radius: 10px;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 0 20px;
+}
+
+.player1 {
+    animation: p1 4s infinite;
+}
+
+.player2 {
+    animation: p2 4s infinite;
+}
+
+.player1::before,
+.player2::before {
+    content: "";
+    width: 60%;
+    height: 70%;
+    position: absolute;
+    border-radius: 10px;
+    bottom: -40px;
+    z-index: -1;
+}
+
+.player1::before {
+    bottom: -40px;
+    right: -40px;
+    animation: p1_in 4s infinite;
+}
+
+.player2::before {
+    left: -40px;
+    animation: p2_in 4s infinite;
+}
+
+@keyframes p1 {
+    0% {
+        background-color: rgba(0, 179, 255, 0.5);
+    } 
+    50% {
+        background-color: rgba(47, 255, 0, 0.5);
+    }
+    100% {
+        background-color: rgba(0, 179, 255, 0.5);
+    }
+}
+
+@keyframes p1_in {
+    0% {
+        background-color: rgba(47, 255, 0, 0.5);
+    } 
+    50% {
+        background-color: rgba(0, 179, 255, 0.5);
+    }
+    100% {
+        background-color: rgba(47, 255, 0, 0.5);
+    }
+}
+
+@keyframes p2 {
+    0% {
+        background-color: rgba(255, 98, 0, 0.5);
+    } 
+    50% {
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        background-color: rgba(255, 98, 0, 0.5);
+    }
+}
+
+@keyframes p2_in {
+    0% {
+        background-color: rgba(255, 0, 0, 0.5);
+    } 
+    50% {
+        background-color: rgba(255, 98, 0, 0.5);
+    }
+    100% {
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+}
+
+.cor {
+    display: none;
+}
+
+.img-cor {
+    width: 100%;
+}
+
+.corona > div {
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: fit-content;
+    right: 0;
+    left: 0;
+    margin: auto;
+    top: -50px;
+}
+
+#pointsP1,
+#pointsP2 {
+    font-size: 50px;
+} 
+
+.grid-game {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 1fr 1fr 1fr;
+    border: 2px solid black;
+    position: relative;
+}
+
+.grid-game > div {
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: calc((100px - 80px) / 2);
+    position: relative;
+}
+
+.grid-game > div:hover {
+    transform: scale(110%);
+}
+
+#winning-cell {
+    background-color: rgba(0, 128, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.restart-container,
+.newgame-container {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.restart,
+.newgame {
+    color: white;
+    background-color: rgb(50, 50, 50);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: color .3s ease;
+    transition: background .3s ease;
+    border: none;
+    border-bottom: 3px solid rgb(0, 0, 0);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.victory {
+    text-align: center;
+    margin-top: 40px;
+    color: rgb(0, 255, 0);
+    font-weight: bold;
+    display: none;
+}
+
+.restart:hover,
+.newgame:hover {
+    cursor: pointer;
+    background-color: rgb(74, 74, 74);
+}
+
+.restart:active,
+.newgame:active {
+    cursor: pointer;
+    background: rgb(41, 41, 41);
+    border-bottom: none;
+    border-top: 3px solid white;
+}
+
+.newgame-container {
+    display: none;
+}
